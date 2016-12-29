@@ -1,0 +1,441 @@
+$course-item-height: 150px;
+$email-input-btn-min-width: 40%;
+
+body {
+	min-height: 2000px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.below-video {
+	background-color: green;
+	z-index: 100;
+	width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  // height: 100%;
+} 
+.video-container {
+	position: relative;
+	overflow: hidden;
+	// height: 700px;
+}
+
+.nav-bar-static {
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+}
+
+.is-scroll-nav {
+	transition: background-color 0.2s;
+	background-color: #394047;
+	border-bottom: 1px solid white;
+}
+
+.no-scroll-nav {
+	transition: background-color 0.2s;
+	background-color: transparent;
+	border-bottom: 0px;
+}
+
+.nav-item {
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  display: inline-block;
+  // color: #394047;  // for video
+  color: white;
+  font-size: 14px;
+  padding-top: 8px;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  margin-left: -3px;
+  margin-right: -2px;
+
+  &:hover {
+  	color: white;
+  	cursor: pointer;
+  }
+}
+
+.is-scroll-nav-item {
+  transition: color 0.2s;
+  color: white;
+  border-right: 1px solid #e0e4e7;
+  border-left: 1px solid #e0e4e7;
+
+  &:hover {
+  	background-color: #454d54;
+  	cursor: pointer;
+  }
+}
+
+#email-input {
+	font-size: 16px;
+	border-radius: 2px;
+	border: 1px solid #1687e5;
+	padding: 6px;
+	text-align: center;
+	min-width: $email-input-btn-min-width;
+}
+
+#btn-go-to-course {
+	padding: 5px 45px 5px 45px;
+    font-size: 22px;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #1687e5;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    color: white;
+    margin-top: 10px;
+    transition: all 0.2s;
+
+    &:hover {
+    	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.42);
+    	background-color: #167fd6;
+    }
+}
+
+#header-text-main {
+	font-size: 28px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	letter-spacing: 1.5px;
+}
+
+.header-text-top {
+	color: #d9d7d7;
+	font-size: 16px;
+}
+
+// .static-bottom-bar {
+// 	position: absolute;
+// 	bottom: 0px;
+// 	left: 0px;
+// 	height: 60px;
+// 	width: 100%;
+// 	z-index: 100;
+// 	background-color: red;
+// }
+
+.hover-div {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 100px;
+	background: rgba(0, 0, 0, 0.75);
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+
+.course-hover-div {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 65px;
+	background: rgba(0, 0, 0, 0.75);
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+
+.hover-text {
+	text-weight: bold;
+	color: white;
+
+	h5, p {
+		color: white;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.vid-item {
+	color: #23527c;
+
+	&:hover {
+	}
+}
+
+.marg-btm-20 {
+	margin-bottom: 40px;
+}
+
+.vid-item:hover .hover-div {
+	opacity: 1;
+}
+
+.img-background-course:hover .course-hover-div {
+	opacity: 1;
+}
+
+.vid-item:hover .reg-circle {
+	display: none;
+}
+
+.hover-text .glyphicon-play-circle {
+	font-size: 80px;
+	text-shadow: none;
+	transition: text-shadow 0.2s;
+
+	&:hover {
+		text-shadow: 2px 2px 2px rgba(131, 124, 124, 0.92);
+	}
+}
+
+.reg-circle {
+	padding-top: 100px;
+	font-size: 80px;
+	text-shadow: none;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.item-item-info {
+	padding: 0px 10px 0px 10px;
+	background-color: #345271;
+	border-right: 2px solid #e1e1e1;
+ 	border-bottom: 2px solid #e1e1e1;
+ 	min-height: 80px;
+ 	display: table;
+}
+
+.course-info {
+	padding: 0px 10px 0px 10px;
+	background-color: #345271;
+ 	// border-bottom: 2px solid #e1e1e1;
+ 	min-height: 40px;
+ 	display: table;
+}
+
+.img-background {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 260px;
+ 	border-right: 2px solid #e1e1e1;
+ 	text-align: center;
+ 	// background-image: url('http://www.laptopmag.com/images/uploads/4758/g/apple-macbook-2016-nw-g03.jpg');
+}
+
+.header-img {
+	width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+ 	background-image: url('/assets/header-background-mac.jpg');
+ 	// https://static.pexels.com/photos/34676/pexels-photo.jpg
+}
+
+.header-img-filter {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	position: relative;
+}
+
+.header-content {
+	position: absolute;
+	top: 38%; width: 100%;
+	text-align: center;
+}
+
+.header-img-caret {
+	position: absolute;
+	bottom: 10px;
+	left: 48.2%;
+	color: white;
+	transition: font-size 0.3s;
+
+	&:hover {
+		cursor: pointer;
+		font-size: 31px;
+	}
+}
+
+.img-background-course {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: $course-item-height;
+    padding: 0px;
+
+    &:hover {
+    	cursor: pointer;
+    }
+}
+
+.vid-section-inner-container {
+	padding-left: 90px;
+	padding-right: 90px;
+	height: 100%;
+}
+
+.info-text {
+	display: table-cell;
+	color: white;
+	vertical-align: middle;
+	line-height: 23px;
+	font-size: 14px;
+}
+
+.mfp-title {
+	position: absolute;
+	top: 530px;
+	padding: 0px;
+	text-align: center;
+	width: 100%;
+}
+
+.mfp-title-text {
+	padding: 5px 45px 5px 45px;
+    font-size: 22px;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #1687e5;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    color: white;
+    margin-top: 10px;
+
+    &:hover {
+    	text-decoration: none;
+    	color: white;
+    	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.52);
+    	background-color: #1c80d4;
+    }
+}
+
+.section-title {
+	text-align: center;
+	margin: 40px 0px;
+
+	span {
+		font-size: 30px;
+		font-weight: bold;
+		color: #345271;
+	}
+}
+
+.course-content {
+	background-color: white;
+	height: $course-item-height;
+}
+
+.course-rating {
+	text-align: left;
+	margin-bottom: 0px;
+}
+
+.course-price {
+	text-align: left;
+}
+
+.take-course-btn {
+	padding: 5px 15px 5px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #1687e5;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    color: white;
+    margin-top: 10px;
+
+    &:hover {
+    	background-color: #3196ea;
+    	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    	cursor: pointer;
+    	color: white;
+    	text-decoration: none;
+    }
+}
+
+.subscribe-input-caption {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.subscribe-input-subcaption {
+	font-size: 14px;
+	text-align: left;
+}
+
+#email-submit {
+	padding: 5px 45px 5px 45px;
+    font-size: 18px;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #1687e5;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    color: white;
+    margin-top: 10px;
+    margin-left: -3px;
+    transition: all 0.2s;
+    min-width: $email-input-btn-min-width;
+
+    &:hover {
+    	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.42);
+    	background-color: #167fd6;
+    }
+}
+
+.modal-dialog {
+	margin-top: 145px;
+}
+
+.close-btn {
+	position: absolute;
+	right: 0px;
+	top: -40px;
+	color: white;
+	opacity: 1;
+	font-weight: 300;
+
+	&:hover {
+		color: #efecec;
+		opacity: 1;
+		text-shadow: none;
+	}
+}
+
+// email modal 
+.email-modal-body {
+	background-color: #fbfbfb;
+}
+
+.confirm-div-container {
+	display: none;
+	width: 100%;
+	position: fixed;
+	top: 100px;
+	left: 0px;
+}
+
+.confirm-div {
+	width: 300px;
+	background-color: rgba(137,212,106,0.70);
+	margin: auto;
+	border-radius: 3px;
+	text-align: center;
+	min-height: 50px;
+}
+
+@media screen and (max-width: 480px) {
+	.vid-section-inner-container {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+
+

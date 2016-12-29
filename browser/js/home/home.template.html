@@ -1,0 +1,168 @@
+<div class="nav-bar-static" style="width: 100%; height: 40px; z-index: 100;">
+    <span class="nav-item" ng-click="chooseSection('videos')">
+        VIDEOS
+    </span>
+    <span class="nav-item" ng-click="chooseSection('courses')">
+        COURSES
+    </span>
+    <span class="nav-item" ng-click="openSubscribeModal()">
+        NEW MATERIAL
+    </span>
+</div>
+<div>
+    <!-- <div class="video-container">
+        <video id="header-video" muted autoplay loop style="width: 100%" poster="https://static.pexels.com/photos/34676/pexels-photo.jpg">
+          <source src="http://p.bigstockphoto.com/typing-on-keyboard.mp4" type="video/mp4">
+              <source src="http://p.bigstockphoto.com/typing-on-keyboard.webm" type="video/webm">
+              </video>
+              <div class="overlay">
+                <div style="position: absolute; top: 38%; width: 100%">
+                    <span id="input-caption">Be the first to know when new material is released</span>
+                    <br>
+                    <br>
+                    <input type="text" id="email-input" placeholder="Enter email"></input>
+                    <br>
+                    <button id="btn-email-submit">Submit</button>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="header-img">
+            <div class="header-img-filter">
+                <div class="header-content">
+                    <span class="header-text-top">New Course:</span>
+                    <br>
+                    <span id="header-text-main">Learning Data Structures In JavaScript from Scratch</span>
+                    <br>
+                    <br>
+                    <!-- <input type="text" id="email-input" placeholder="Enter email"></input> -->
+                    <!-- <br> -->
+                    <button id="btn-go-to-course" ng-click="goToCourse()">Take Course Now !</button>
+                </div>
+                <i class="fa fa-2x fa-chevron-down header-img-caret"
+                    aria-hidden="true"
+                    ng-click="onArrowClick()">
+                </i>
+            </div>
+        </div>
+
+
+
+        <div class="videos" ng-show="showVideos">
+
+            <div class="col-md-12 col-sm-12 section-title">
+                <span>COURSE VIDEOS</span>
+            </div>
+            <!-- video item -->
+            <div class="container">
+                <div class="vid-section-inner-container">
+
+                    <div class="col-md-4 col-sm-6 col-xs-12 marg-btm-20" ng-repeat="video in videos">
+                        <!-- <a class="vid-item popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"> -->
+                        <a class="vid-item popup-youtube" href="{{ video.videoLink }}">
+                            <div class="img-background tt" style="background-image: {{video.image}}">
+                                <span class="glyphicon glyphicon-play-circle reg-circle"></span>
+                                <div class="hover-div">
+                                    <span class="text-center hover-text">
+                                        <span class="glyphicon glyphicon-play-circle"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 text-center item-item-info">
+                            <p class="info-text">{{ video.title }}</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="courses" ng-show="showCourses">
+
+            <div class="col-md-12 col-sm-12 section-title">
+                <span>COURSES</span>
+            </div>
+            <!-- video item -->
+            <div class="container">
+                <div class="vid-section-inner-container">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 marg-btm-20">
+                        <div class="vid-item" href="{{ video.videoLink }}">
+                            <a  class="img-background-course tt col-md-4 col-sm-4"
+                                style="background-image: url('/assets/courseIntroImg.png')"
+                                href="https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/?couponCode=CODINGJS2"
+                                target="_blank">
+                                <div class="course-hover-div">
+                                    <span class="text-center hover-text">
+                                        Go to course!
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="col-md-8 col-sm-8 course-content">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 text-center course-info">
+                                        <p class="info-text">Learning Data Structures in JavaScript from Scratch</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8" style="padding-top: 20px;">
+                                    <p class="course-descripton">Learn data structures from the ground up.  Understand what they are, why they are important, and how to code them out in JavaScript.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-4" style="padding-top: 20px;">
+                                    <div>
+                                        <p class="course-rating">Rating:&nbsp;&nbsp;
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                            <span class="small">(4.6)</span>
+                                        </p>
+                                        <p class="course-price">Price:&nbsp;&nbsp;<b>$20</b>&nbsp;&nbsp;&nbsp;&nbsp;<span style="text-decoration: line-through;">$75</span></p>
+                                    </div>
+                                    <a  class="take-course-btn"
+                                        href="https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/?couponCode=CODINGJS2"
+                                        target="_blank">
+                                        Take Course
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="confirm-div-container">
+    <div class="confirm-div">
+        <p style="padding: 20px 0px; text-align: center; color: white; font-size: 16px;">Email submitted successfully!</p>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="border-radius: 2px;">
+      <div class="modal-body email-modal-body" style="text-align: center; padding: 40px 15px; position: relative;">
+        <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="subscribe-input-caption">Be First To Know About New Material</p>
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+            <p class="subscribe-input-subcaption">Receive notificatoins when <b>new courses</b> and <b>materials</b> are released and recieve <b>discounts for courses</b></p>
+        </div>
+        <br>
+        <input type="text" id="email-input" placeholder="Enter email" ng-model="emailAddress"></input>
+        <br>
+        <button id="email-submit" ng-click="submitEmail()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
