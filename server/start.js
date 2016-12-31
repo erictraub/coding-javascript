@@ -11,6 +11,6 @@
  start your application from main.js.
 
 */
-
+require('newrelic'); // for heroku newrelic addon
 require('babel-register');
 require('./main');
