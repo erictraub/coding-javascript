@@ -1,5 +1,5 @@
 // All used modules.
-require('newrelic'); // for heroku newrelic addon
+require('./newrelic'); // for heroku newrelic addon
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var runSeq = require('run-sequence');
