@@ -157,9 +157,11 @@
             <p class="subscribe-input-subcaption">Receive notificatoins when <b>new courses</b> and <b>materials</b> are released and recieve <b>discounts for courses</b></p>
         </div>
         <br>
-        <input type="text" id="email-input" placeholder="Enter email" ng-model="emailAddress"></input>
-        <br>
-        <button id="email-submit" ng-click="submitEmail()">Submit</button>
+        <form>
+            <input type="text" id="email-input" placeholder="Enter email" ng-model="emailAddress"></input>
+            <br>
+            <button type="submit" id="email-submit" ng-click="submitEmail()">Submit</button>
+        </form>
       </div>
     </div>
   </div>
