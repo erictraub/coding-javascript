@@ -65,7 +65,6 @@ app.controller('HomeController', function($scope, HomeFactory) {
 
 	function openVidModal() {
 		setTimeout(() => {
-			console.log('RAN');
 			$('.popup-youtube').magnificPopup({
 		        disableOn: 700,
 		        type: 'iframe',
@@ -106,7 +105,6 @@ app.controller('HomeController', function($scope, HomeFactory) {
 	};
 
 	$scope.openSubscribeModal = function() {
-		console.log('RAN IT');
 		$('#myModal').modal();
 	};
 
@@ -119,7 +117,6 @@ app.controller('HomeController', function($scope, HomeFactory) {
 		if (!$scope.emailAddress.length) return;
 		HomeFactory.createNewEmail($scope.emailAddress)
 			.then(function(data) {
-				console.log(data.data);
 				$scope.emailAddress = '';
 				$('#myModal').modal('hide');
 				setTimeout(function() {
