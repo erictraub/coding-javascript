@@ -110,11 +110,22 @@ gulp.task('buildCSSProduction', function () {
 });
 
 gulp.task('buildJSProduction', function () {
+    // return gulp.src(['./browser/js/app.js', './browser/js/**/*.js'])
+    //     .pipe(concat('main.js'))
+    //     .pipe(babel())
+    //     .pipe(ngAnnotate())
+    //     .pipe(uglify())
+    //     .pipe(gulp.dest('./public'));
+
     return gulp.src(['./browser/js/app.js', './browser/js/**/*.js'])
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(ngAnnotate())
-        .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./public'));
 });
 
@@ -124,12 +135,12 @@ gulp.task('buildProduction', ['buildCSSProduction', 'buildJSProduction']);
 // --------------------------------------------------------------
 
 gulp.task('build', function () {
-    // if (process.env.NODE_ENV === 'production') {
-    //     runSeq(['buildJSProduction', 'buildCSSProduction']);
-    // } else {
-    //     runSeq(['buildJS', 'buildCSS']);
-    // }
-    runSeq(['buildJS', 'buildCSS']);
+    if (process.env.NODE_ENV === 'production') {
+        runSeq(['buildJSProduction', 'buildCSSProduction']);
+    } else {
+        runSeq(['buildJS', 'buildCSS']);
+    }
+    // runSeq(['buildJS', 'buildCSS']);
 });
 
 gulp.task('default', function () {
