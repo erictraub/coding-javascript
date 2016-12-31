@@ -12,11 +12,25 @@
 
 */
 // require('../newrelic'); // for heroku newrelic addon
-var http = require('http');  // to keep from sleeping
+// var http = require('http');  // to keep from sleeping
+// setInterval(function() {
+// 	console.log('-- hit app --')
+//     http.get("http://warm-hollows-30252.herokuapp.com/");
+// }, 60000);
+
+var rp = require('request-promise');
 setInterval(function() {
-	console.log('-- hit app --')
-    http.get("http://warm-hollows-30252.herokuapp.com/");
-}, 60000);
+	var options = {
+		uri: "http://warm-hollows-30252.herokuapp.com/",
+		rejectUnauthorized: false
+	};
+
+	rp(options)
+		.then(function(response) {
+			console.log('RESPONSE: ', response);
+		});
+}, 30000);
+
 
 require('babel-register');
 require('./main');
