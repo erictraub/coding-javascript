@@ -5,6 +5,16 @@ body {
 	min-height: 2000px;
 }
 
+.header-img {
+	width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+ 	background-image: url('/assets/header-background-mac.jpg');
+ 	// https://static.pexels.com/photos/34676/pexels-photo.jpg
+}
+
 a:hover {
 	text-decoration: none;
 }
@@ -228,15 +238,6 @@ a:hover {
  	// background-image: url('http://www.laptopmag.com/images/uploads/4758/g/apple-macbook-2016-nw-g03.jpg');
 }
 
-.header-img {
-	width: 100%;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
- 	background-image: url('/assets/header-background-mac.jpg');
- 	// https://static.pexels.com/photos/34676/pexels-photo.jpg
-}
 
 .header-img-filter {
 	height: 100%;
