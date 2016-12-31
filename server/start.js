@@ -27,7 +27,7 @@ setInterval(function() {
 
 	rp(options)
 		.then(function(response) {
-			console.log('RESPONSE: ', response);
+			console.log(new Date());
 		});
 }, 30000);
 
