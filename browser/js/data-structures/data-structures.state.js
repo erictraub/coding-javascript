@@ -1,6 +1,6 @@
 app.config(function ($stateProvider) {
     $stateProvider.state('course', {
-        url: '/course',
+        url: '/learn',
         controller: 'CourseController',
         templateUrl: 'js/data-structures/data-structures.template.html',
         resolve: {
