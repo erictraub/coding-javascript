@@ -72,11 +72,23 @@ a:hover {
   border-left: 1px solid transparent;
   margin-left: -3px;
   margin-right: -2px;
+  letter-spacing: 1px;
 
   &:hover {
   	color: white;
   	cursor: pointer;
   }
+}
+
+.nav-right-item {
+	color: white;
+	margin-top: 13px;
+    margin-right: 20px;
+
+	&:hover {
+		cursor: pointer;
+		color: #aba8a8;
+	}
 }
 
 .is-scroll-nav-item {

@@ -7,7 +7,7 @@ app.controller('HomeController', function($scope, HomeFactory) {
 	$scope.showCourses = true;
 	$scope.emailAddress = '';
 	console.clear();
-	console.log('%cGo to "codingjavascript.com/join" ... you\'ll love it!', "color:blue; background:white; font-size: 14pt");
+	console.log('%cGo to "codingjavascript.com/learn" ... you\'ll love it!', "color:blue; background:white; font-size: 14pt");
 
 	$scope.videos = [
 		{title: 'Learning Data Structures In JavaScript From Scratch Intro', image: "url('/assets/courseIntroImg.png')", videoLink: 'https://www.youtube.com/watch?v=dHO7tKgsBLg'},
