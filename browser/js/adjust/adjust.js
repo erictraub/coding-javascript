@@ -17,6 +17,9 @@ app.controller('AdjustController', function($scope, AdjustFactory) {
 			});
 			$scope.allEmails = emailArr;
 		});
+
+    AdjustFactory.getCurrencyPercnetChange();
+
 });
 
 
@@ -25,10 +28,37 @@ app.factory('AdjustFactory', function ($http) {
 
     AdjustFactory.fetchAllEamils = function() {
     	return $http.get('/api/main/email')
-    		.then(function(response) {
-    			return response.data;
-    		});
+		.then(function(response) {
+			return response.data;
+		});
     };
+
+    AdjustFactory.getCurrencyPercnetChange = function() {
+        return $http.get('https://poloniex.com/public?command=returnTicker')
+        .then(response => {
+            response = response.data;
+            var totalPercentage = 0;
+            var totalCurrencies = 0;
+            for (var key in response) {
+                if (key.substring(0, 3) === 'BTC') {
+                    totalPercentage += Number(response[key].percentChange);
+                    totalCurrencies++;
+                }   
+            };
+            var averagePercentChange = totalPercentage / totalCurrencies;
+            console.log('TOTAL PERCENTAGE: ', totalPercentage);
+            console.log('TOTAL CURRENCIES: ', totalCurrencies);
+            console.log('AVG PERCENT CHANGE: ', averagePercentChange);
+        });
+    }
 
     return AdjustFactory;
 });
+
+
+
+
+
+
+
+
