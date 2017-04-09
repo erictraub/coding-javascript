@@ -4,6 +4,7 @@ module.exports = router;
 
 router.use('/members', require('./members'));
 router.use('/main', require('./main'));
+router.use('/currencies', require('./currencies'));
 
 // Make sure this is after all of
 // the registered routes!

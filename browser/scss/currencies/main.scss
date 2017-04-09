@@ -1,0 +1,21 @@
+.currencies-section-1 {
+
+	.batch-table {
+		max-width: 500px;
+
+		td {
+			font-size: 10px;
+		}
+	}
+
+	.batch-div {
+		display: inline-block;
+		padding: 20px;
+	}
+
+	.batch-container {
+		overflow: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+}

@@ -1,0 +1,40 @@
+<section class="currencies-section-1">
+	<div class="batch-container">
+		<div ng-repeat="batch in batches" class="batch-div">
+			<table class="table table-striped batch-table">
+				<thead>
+					<tr>
+						<th>Currency</th>
+						<th>% Change</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="currency in batch.currencies">
+						<td 
+							ng-class="{ 'text-green': currency.percentChange >= 0,
+										'text-red': currency.percentChange < 0 }">
+							{{ currency.ticker }}
+						</td>
+						<td 
+							ng-class="{ 'text-green': currency.percentChange >= 0,
+										'text-red': currency.percentChange < 0 }">
+							{{ currency.percentChange }}
+						</td>
+						<td 
+							ng-class="{ 'text-green': currency.percentChange >= 0,
+										'text-red': currency.percentChange < 0 }">
+							{{ currency.time }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<small>Avg % Change:</small>
+				<strong ng-class="{ 'text-green': batch.averagePercentChange >= 0,
+									'text-red': batch.averagePercentChange < 0 }">
+					{{ batch.averagePercentChange }}%</strong>
+			</p>
+		</div>
+	</div>
+</section>
