@@ -1,5 +1,7 @@
 'use strict';
 var chalk = require('chalk');
+var schedule = require('node-schedule');
+var currenciesManager;
 var mainManager;
 
 // Requires in ./db/index.js -- which returns a promise that represents
@@ -21,10 +23,17 @@ var startServer = function () {
     });
 };
 
+
 startDb.then(createApplication).then(() => {
 		startServer();
 		mainManager = require('./mainManager');
-		mainManager.startInterval();
+		currenciesManager = require('./app/routes/currencies/currenciesManager');
+		var rule = new schedule.RecurrenceRule();
+		rule.dayOfWeek = [0,1,2,3,4,5,6];
+		rule.hour = 20;
+		rule.minute = 0;
+		schedule.scheduleJob(rule, currenciesManager.createAllCurrencyObjs);
+		// mainManager.startInterval();
 	})
 	.catch(function (err) {
 	    console.error(chalk.red(err.stack));
