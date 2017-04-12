@@ -32,7 +32,7 @@ startDb.then(createApplication).then(() => {
 		rule.dayOfWeek = [0,1,2,3,4,5,6];
 		rule.hour = 20;
 		rule.minute = 0;
-		schedule.scheduleJob(rule, currenciesManager.createAllCurrencyObjs);
+		// schedule.scheduleJob(rule, currenciesManager.createAllCurrencyObjs);
 		// mainManager.startInterval();
 	})
 	.catch(function (err) {
