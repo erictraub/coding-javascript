@@ -7,6 +7,7 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('AdjustController', function($scope, AdjustFactory) {
+
 	var clear = window.location.href.indexOf("clear=3goodcall3!") > -1 ? true : false;
 
 	if (clear) AdjustFactory.fetchAllEamils()
