@@ -6,7 +6,6 @@ app.controller('HomeController', function($scope, HomeFactory) {
 	$scope.showVideos = true;
 	$scope.showCourses = true;
 	$scope.emailAddress = '';
-	console.clear();
 	console.log('%cGo to "codingjavascript.com/learn" ... you\'ll love it!', "color:blue; background:white; font-size: 14pt");
 
 	$scope.videos = [
@@ -111,7 +110,7 @@ app.controller('HomeController', function($scope, HomeFactory) {
 	};
 
 	$scope.goToCourse = function() {
-		var win = window.open('https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/?couponCode=CODINGJS3', '_blank');
+		var win = window.open('https://www.udemy.com/learning-algorithms-in-javascript-from-scratch/?couponCode=CODINGJSDISCOUNT', '_blank');
 		win.focus();
 	};
 
