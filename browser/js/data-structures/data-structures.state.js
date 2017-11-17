@@ -4,8 +4,9 @@ app.config(function ($stateProvider) {
         controller: 'CourseController',
         templateUrl: 'js/data-structures/data-structures.template.html',
         resolve: {
-        	redirect: function() {
-        		window.location.href = "https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/?couponCode=GOOGLEDISCOUNT1";
+        	redirect: function(HomeFactory) {
+                HomeFactory.recordNewHit('learn');
+        		window.location.href = "https://www.udemy.com/learning-algorithms-in-javascript-from-scratch/?couponCode=SITEDISCOUNT";
         	}
         }
     });

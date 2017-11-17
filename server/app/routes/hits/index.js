@@ -29,8 +29,12 @@ router.get('/by-date', (req, res, next) => {
 
         hits.forEach(hit => {
             const date = hit.time.toString().substring(0,10);
-            if (!hitsObj[date]) hitsObj[date] = 0;
-            hitsObj[date]++;
+            if (!hitsObj[date]) {
+                hitsObj[date] = {};
+                hitsObj[date][hit.page] = 0;
+            }
+            if (!hitsObj[date][hit.page]) hitsObj[date][hit.page] = 0;
+            hitsObj[date][hit.page]++;
         });
 
         res.send(hitsObj);

@@ -8,8 +8,8 @@ app.factory('HomeFactory', function ($http) {
     		});
     };
 
-    HomeFactory.recordNewHit = function() {
-    	return $http.post('/api/hits/', { page: 'home' })
+    HomeFactory.recordNewHit = function(pageName) {
+    	return $http.post('/api/hits/', { page: pageName })
     		.then(function(hit) {
     			return hit;
     		});
