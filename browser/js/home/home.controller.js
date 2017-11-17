@@ -6,6 +6,7 @@ app.controller('HomeController', function($scope, HomeFactory) {
 	$scope.showVideos = true;
 	$scope.showCourses = true;
 	$scope.emailAddress = '';
+	HomeFactory.recordNewHit();
 	console.log('%cGo to "codingjavascript.com/learn" ... you\'ll love it!', "color:blue; background:white; font-size: 14pt");
 
 	$scope.videos = [

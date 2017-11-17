@@ -13,13 +13,13 @@ app.controller('AdjustController', function($scope, AdjustFactory) {
 	if (clear) AdjustFactory.fetchAllEamils()
 		.then(emails => {
 			var emailArr = [];
-			emails.forEach(email => {
-				emailArr.push(email.emailAddress);
-			});
+			emails.forEach(email => { emailArr.push(email.emailAddress) });
 			$scope.allEmails = emailArr;
 		});
 
     AdjustFactory.getCurrencyPercnetChange();
+    AdjustFactory.fetchAllHits().then(hits => { console.log('Total hits: ', hits.length) });
+    AdjustFactory.fetchHitsByDate().then(hits => { console.log('Hits by date: ', hits) });
 
 });
 
@@ -32,6 +32,20 @@ app.factory('AdjustFactory', function ($http) {
 		.then(function(response) {
 			return response.data;
 		});
+    };
+
+    AdjustFactory.fetchAllHits = function() {
+        return $http.get('/api/hits')
+        .then(function(response) {
+            return response.data;
+        });
+    };
+
+    AdjustFactory.fetchHitsByDate = function() {
+        return $http.get('/api/hits/by-date')
+        .then(function(response) {
+            return response.data;
+        });
     };
 
     AdjustFactory.getCurrencyPercnetChange = function() {

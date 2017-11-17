@@ -1,4 +1,6 @@
 <div class="nav-bar-static" style="width: 100%; height: 40px; z-index: 100;">
+<img src="/assets/js.png" style="height:30px;width:30px;position:fixed;left:9px;top:4px;" />
+
     <span class="nav-item" ng-click="chooseSection('videos')">
         VIDEOS
     </span>
@@ -15,22 +17,6 @@
 
 </div>
 <div>
-    <!-- <div class="video-container">
-        <video id="header-video" muted autoplay loop style="width: 100%" poster="https://static.pexels.com/photos/34676/pexels-photo.jpg">
-          <source src="http://p.bigstockphoto.com/typing-on-keyboard.mp4" type="video/mp4">
-              <source src="http://p.bigstockphoto.com/typing-on-keyboard.webm" type="video/webm">
-              </video>
-              <div class="overlay">
-                <div style="position: absolute; top: 38%; width: 100%">
-                    <span id="input-caption">Be the first to know when new material is released</span>
-                    <br>
-                    <br>
-                    <input type="text" id="email-input" placeholder="Enter email"></input>
-                    <br>
-                    <button id="btn-email-submit">Submit</button>
-                </div>
-            </div>
-        </div> -->
 
         <div class="header-img">
             <div class="header-img-filter">
@@ -52,46 +38,13 @@
         </div>
 
 
-
-        <div class="videos" ng-show="showVideos">
-
-            <div class="col-md-12 col-sm-12 section-title">
-                <span>COURSE VIDEOS</span>
-            </div>
-            <!-- video item -->
-            <div class="container">
-                <div class="vid-section-inner-container">
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 marg-btm-20" ng-repeat="video in videos">
-                        <!-- <a class="vid-item popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"> -->
-                        <a class="vid-item popup-youtube" href="{{ video.videoLink }}">
-                            <div class="img-background tt" style="background-image: {{video.image}}">
-                                <span class="glyphicon glyphicon-play-circle reg-circle"></span>
-                                <div class="hover-div">
-                                    <span class="text-center hover-text">
-                                        <span class="glyphicon glyphicon-play-circle"></span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 text-center item-item-info">
-                            <p class="info-text">{{ video.title }}</p>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
         <div class="courses" ng-show="showCourses">
-
             <div class="col-md-12 col-sm-12 section-title">
                 <span>COURSES</span>
             </div>
             <!-- video item -->
             <div class="container">
                 <div class="vid-section-inner-container">
-
                     <!-- algorithms course -->
                     <div class="col-md-12 col-sm-12 col-xs-12 marg-btm-20">
                         <div class="vid-item">
@@ -181,10 +134,37 @@
                         </div>
                     </div>
                     <!-- end data structures course -->
-
                 </div>
             </div>
         </div>
+
+        <div class="videos" ng-show="showVideos">
+            <div class="col-md-12 col-sm-12 section-title">
+                <span>COURSE VIDEOS</span>
+            </div>
+            <!-- video item -->
+            <div class="container">
+                <div class="vid-section-inner-container">
+                    <div class="col-md-4 col-sm-6 col-xs-12 marg-btm-20" ng-repeat="video in videos">
+                        <!-- <a class="vid-item popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"> -->
+                        <a class="vid-item popup-youtube" href="{{ video.videoLink }}">
+                            <div class="img-background tt" style="background-image: {{video.image}}">
+                                <span class="glyphicon glyphicon-play-circle reg-circle"></span>
+                                <div class="hover-div">
+                                    <span class="text-center hover-text">
+                                        <span class="glyphicon glyphicon-play-circle"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 text-center item-item-info">
+                            <p class="info-text">{{ video.title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
     

@@ -8,5 +8,12 @@ app.factory('HomeFactory', function ($http) {
     		});
     };
 
+    HomeFactory.recordNewHit = function() {
+    	return $http.post('/api/hits/', { page: 'home' })
+    		.then(function(hit) {
+    			return hit;
+    		});
+    };
+
     return HomeFactory;
 });

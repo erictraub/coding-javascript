@@ -4,3 +4,4 @@
 require('./user');
 require('./email');
 require('./currencyPrice');
+require('./hit');
